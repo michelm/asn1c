@@ -100,14 +100,14 @@ NativeInteger_decode_ber(asn_codec_ctx_t *opt_codec_ctx,
 			const void *constbuf;
 			void *nonconstbuf;
 		} unconst_buf;
-		long l;
+		long long l;
 
 		unconst_buf.constbuf = buf_ptr;
 		tmp.buf = (uint8_t *)unconst_buf.nonconstbuf;
 		tmp.size = length;
 
 		if((specs&&specs->field_unsigned)
-			? asn_INTEGER2ulong(&tmp, (unsigned long *)&l) /* sic */
+			? asn_INTEGER2ulong(&tmp, (unsigned long long *)&l) /* sic */
 			: asn_INTEGER2long(&tmp, &l)) {
 			rval.code = RC_FAIL;
 			rval.consumed = 0;
@@ -185,9 +185,9 @@ NativeInteger_decode_xer(asn_codec_ctx_t *opt_codec_ctx,
 	rval = INTEGER_decode_xer(opt_codec_ctx, td, &st_ptr, 
 		opt_mname, buf_ptr, size);
 	if(rval.code == RC_OK) {
-		long l;
+		long long l;
 		if((specs&&specs->field_unsigned)
-			? asn_INTEGER2ulong(&st, (unsigned long *)&l) /* sic */
+			? asn_INTEGER2ulong(&st, (unsigned long long *)&l) /* sic */
 			: asn_INTEGER2long(&st, &l)) {
 			rval.code = RC_FAIL;
 			rval.consumed = 0;
@@ -254,13 +254,16 @@ NativeInteger_decode_uper(asn_codec_ctx_t *opt_codec_ctx,
 	rval = INTEGER_decode_uper(opt_codec_ctx, td, constraints,
 				   &tmpintptr, pd);
 	if(rval.code == RC_OK) {
+		long long l;
 		if((specs&&specs->field_unsigned)
-			? asn_INTEGER2ulong(&tmpint, (unsigned long *)native)
-			: asn_INTEGER2long(&tmpint, native))
+			? asn_INTEGER2ulong(&tmpint, (unsigned long long *)&l)
+			: asn_INTEGER2long(&tmpint, &l))
 			rval.code = RC_FAIL;
-		else
+		else {
+			*native = l;
 			ASN_DEBUG("NativeInteger %s got value %ld",
 				td->name, *native);
+		}
 	}
 	ASN_STRUCT_FREE_CONTENTS_ONLY(asn_DEF_INTEGER, &tmpint);
 

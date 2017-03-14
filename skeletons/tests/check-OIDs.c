@@ -1,6 +1,7 @@
 #include <stdio.h>
 #include <assert.h>
 #include <sys/time.h>
+#include <errno.h>
 
 #include <OBJECT_IDENTIFIER.h>
 #include <RELATIVE-OID.h>
@@ -231,8 +232,9 @@ static void check_parse(const char *oid_txt, int retval) {
 	const char *p = oid_txt - 13;
 	assert(p < oid_txt);
 
+	errno = 0;
 	ret = OBJECT_IDENTIFIER_parse_arcs(oid_txt, -1, l, 2, &p);
-	printf("[%s] => %d == %d\n", oid_txt, ret, retval);
+	printf("[%s] => %d == %d (errno = %d)\n", oid_txt, ret, retval, errno);
 	assert(ret == retval);
 	assert(p >= oid_txt);
 }
@@ -415,7 +417,7 @@ main() {
 	check_parse("10.30.234.234.", -1);
 	check_parse("1.2000000000.3", 3);
 	check_parse("1.2147483647.3", 3);
-	if(sizeof(long) == 4) {
+	if(sizeof(long long) == 4) {
 		check_parse("1.2147483648.3", -1);	/* overflow on ILP32 */
 		check_parse("1.2147483649.3", -1);	/* overflow on ILP32 */
 		check_parse("1.3000000000.3", -1);
@@ -423,7 +425,7 @@ main() {
 		check_parse("1.5000000000.3", -1);
 		check_parse("1.6000000000.3", -1);
 		check_parse("1.9000000000.3", -1);
-	} else if(sizeof(long) == 8) {
+	} else if(sizeof(long long) == 8) {
 		check_parse("1.2147483648.3", 3);
 		check_parse("1.9223372036854775807.3", 3);
 		check_parse("1.9223372036854775808.3", -1);
