@@ -78,6 +78,11 @@ enum asn1c_flags {
 	 * Include ASN.1 module's line numbers in comments.
 	 */
 	A1C_LINE_REFS       = 0x20000
+	/*
+	 * -fno-skeletons
+	 * Do not symlink or copy any skeletons
+	 */
+	A1C_NO_SKELETONS	= 0x40000
 };
 
 /*

@@ -111,6 +111,8 @@ main(int ac, char **av) {
 			asn1_compiler_flags &= ~A1C_LINK_SKELETONS;
 		} else if(strcmp(optarg, "link-skeletons") == 0) {
 			asn1_compiler_flags |= A1C_LINK_SKELETONS;
+		} else if(strcmp(optarg, "no-skeletons") == 0) {
+			asn1_compiler_flags |= A1C_NO_SKELETONS;			
 		} else {
 			fprintf(stderr, "-f%s: Invalid argument\n", optarg);
 			exit(EX_USAGE);

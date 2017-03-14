@@ -106,10 +106,10 @@ asn1c_emit_constraint_checking_code(arg_t *arg) {
 				if(native_long_sign(r_value) >= 0) {
 					ulong_optimize = ulong_optimization(etype, r_size, r_value);
 					if(!ulong_optimize) {
-						OUT("unsigned long value;\n");
+						OUT("unsigned long long value;\n");
 					}
 				} else {
-					OUT("long value;\n");
+					OUT("long long value;\n");
 				}
 				break;
 			case ASN_BASIC_REAL:

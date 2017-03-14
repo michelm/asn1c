@@ -438,6 +438,12 @@ asn1c_copy_over(arg_t *arg, char *path) {
 #endif
 
 	fname = a1c_basename(path);
+	if (arg->flags & A1C_NO_SKELETONS) {
+		fprintf(stderr,
+		        "File %s skipped\n",
+		        fname);
+		return 1;
+	}
 	if(!fname
 	|| (use_real_copy ? real_copy(path, fname) : symlink(path, fname))
 	) {
