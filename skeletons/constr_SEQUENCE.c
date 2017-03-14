@@ -1118,8 +1118,13 @@ SEQUENCE_decode_uper(asn_codec_ctx_t *opt_codec_ctx, asn_TYPE_descriptor_t *td,
 
 		/* Fetch the member from the stream */
 		ASN_DEBUG("Decoding member %s in %s", elm->name, td->name);
+		if (elm->type->uper_decoder) {
 		rv = elm->type->uper_decoder(opt_codec_ctx, elm->type,
 			elm->per_constraints, memb_ptr2, pd);
+		}  else { // escape for elements without uper decoder
+			FREEMEM(opres);
+			_ASN_DECODE_FAILED;
+		}
 		if(rv.code != RC_OK) {
 			ASN_DEBUG("Failed decode %s in %s",
 				elm->name, td->name);

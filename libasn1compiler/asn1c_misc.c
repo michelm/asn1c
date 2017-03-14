@@ -40,8 +40,8 @@ reserved_keyword(const char *str) {
  */
 char *
 asn1c_make_identifier(enum ami_flags_e flags, asn1p_expr_t *expr, ...) {
-	static char *storage;
-	static int storage_size;
+	static char *storage = NULL;
+	static int storage_size = 0;
 	int nodelimiter = 0;
 	va_list ap;
 	char *str;
@@ -204,7 +204,7 @@ asn1c_type_name(arg_t *arg, asn1p_expr_t *expr, enum tnfmt _format) {
 			}
 		}
 
-		if(terminal && terminal->spec_index != -1) {
+		if(_format != TNF_RSAFE && terminal && terminal->spec_index != -1) {
 			exprid = terminal;
 			typename = 0;
 		}
@@ -384,7 +384,7 @@ asn1c_type_fits_long(arg_t *arg, asn1p_expr_t *expr) {
 		&& left.value >= 0
 	&& right.type == ARE_VALUE
 		&& right.value > 2147483647
-		&& right.value <= 4294967295UL)
+		&& right.value <= (asn1c_integer_t)(4294967295UL))
 		return FL_FITS_UNSIGN;
 		
 
