@@ -445,6 +445,13 @@ static void
 usage(const char *av0) {
 	fprintf(stderr,
 "ASN.1 Compiler, v" VERSION "\n" COPYRIGHT
+"\n"
+"REMARK:\n"
+"\tThis is an specific patched version with added support for:\n"
+"\t\t- large integers(long long) on 32bit targets\n"
+"\t\t- no skeleton copy option\n"
+"\tThe source code is forked on github at 'https://github.com/michelm/asn1c'\n"
+"\n"
 "Usage: %s [options] file ...\n"
 "Options:\n"
 "  -E                    Run only the ASN.1 parser and print out the tree\n"

@@ -166,18 +166,13 @@ _asn1p_fix_modules(asn1p_t *a, const char *fname) {
 int
 asn1p_atoi(const char *ptr, asn1c_integer_t *value) {
 	errno = 0;	/* Clear the error code */
-
-	if(sizeof(*value) <= sizeof(int)) {
-		*value = strtol(ptr, 0, 10);
-	} else {
-#ifdef	HAVE_STRTOIMAX
-		*value = strtoimax(ptr, 0, 10);
-#elif	HAVE_STRTOLL
-		*value = strtoll(ptr, 0, 10);
-#else
-		*value = strtol(ptr, 0, 10);
-#endif
+	*value = strtoll(ptr, NULL, 10);
+	
+	if (*value < ASN1_MIN_INTEGER || *value > ASN1_MAX_INTEGER) {
+		fprintf(stderr, "ERROR: value(%lld) out of range(min=%lld, max=%lld)\n", 
+		        *value, ASN1_MIN_INTEGER, ASN1_MAX_INTEGER);
+		exit(EXIT_FAILURE);
 	}
-
+	
 	return errno == 0 ? 0 : -1;
 }

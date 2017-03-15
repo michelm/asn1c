@@ -29,7 +29,7 @@
  * type is used by the compiler itself to handle large integer values
  * specified inside ASN.1 grammar.
  */
-typedef	intmax_t asn1c_integer_t;
+typedef	long long asn1c_integer_t;
 #ifdef	PRIdMAX
 #define	PRIdASN	PRIdMAX
 #define	PRIuASN	PRIuMAX
@@ -37,6 +37,19 @@ typedef	intmax_t asn1c_integer_t;
 #define	PRIdASN	"lld"	/* Or j? */
 #define	PRIuASN	"llu"	/* Or j? */
 #endif
+
+#ifdef ASN1_MAX_INTEGER
+#error "Error max integer exists!"
+#else
+#define ASN1_MAX_INTEGER 72057594037927935LL // == FF FF FF FF FF FF FF
+#endif
+
+#ifdef ASN1_MIN_INTEGER
+ #error "Error min integer exists!"
+#else
+ #define ASN1_MIN_INTEGER -72057594037927935LL
+#endif
+
 
 #include "asn1p_list.h"
 #include "asn1p_oid.h"		/* Object identifiers (OIDs) */
