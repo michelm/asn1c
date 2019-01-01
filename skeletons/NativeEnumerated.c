@@ -264,8 +264,8 @@ NativeEnumerated_decode_aper(const asn_codec_ctx_t *opt_codec_ctx,
 	if(ct && ct->upper_bound >= 255) {
 		int padding = 0;
 		padding = (8 - (pd->moved % 8)) % 8;
-		ASN_DEBUG("For NativeEnumerated %s,offset= %lu Padding bits = %d", td->name, pd->moved, padding);
-		ASN_DEBUG("For NativeEnumerated %s, upper bound = %lu", td->name, ct->upper_bound);
+		ASN_DEBUG("For NativeEnumerated %s,offset= %" ASN_PRI_SIZE " Padding bits = %d", td->name, pd->moved, padding);
+		ASN_DEBUG("For NativeEnumerated %s, upper bound = %ju", td->name, ct->upper_bound);
 		if(padding > 0)
 			per_get_few_bits(pd, padding);
 	}
