@@ -57,7 +57,7 @@ _charclass[256] = {
 			state = _ns;				\
 			break;					\
 		}						\
-		_ret = cb(type, chunk_start, _sz, key);		\
+		_ret = cb(type, chunk_start, (size_t)_sz, key);	\
 		if(_ret < _sz) {				\
 			if(_current_too && _ret == -1)		\
 				state = ns;			\

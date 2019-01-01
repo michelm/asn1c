@@ -102,7 +102,7 @@ uper_open_type_get_simple(const asn_codec_ctx_t *ctx,
 			FREEMEM(buf);
 			ASN__DECODE_STARVED;
 		}
-		bufLen += chunk_bytes;
+		bufLen += (size_t)chunk_bytes;
 	} while(repeat);
 
 	ASN_DEBUG("Getting open type %s encoded in %ld bytes", td->name,
@@ -122,7 +122,7 @@ uper_open_type_get_simple(const asn_codec_ctx_t *ctx,
                 if (((padding > 0 && padding < 8) ||
 		/* X.691#10.1.3 */
 		(spd.nboff == 0 && spd.nbits == 8 && spd.buffer == buf)) &&
-                    per_get_few_bits(&spd, padding) == 0) {
+                    per_get_few_bits(&spd, (int)padding) == 0) {
 			/* Everything is cool */
 			FREEMEM(buf);
 			return rv;
@@ -230,7 +230,7 @@ uper_open_type_get_complex(const asn_codec_ctx_t *ctx,
 	/* Skip data not consumed by the decoder */
 	if(arg.unclaimed) {
 		ASN_DEBUG("Getting unclaimed %d", (int)arg.unclaimed);
-		switch(per_skip_bits(pd, arg.unclaimed)) {
+		switch(per_skip_bits(pd, (int)arg.unclaimed)) {
 		case -1:
 			ASN_DEBUG("Claim of %d failed", (int)arg.unclaimed);
 			ASN__DECODE_STARVED;
@@ -350,9 +350,9 @@ uper_ugot_refill(asn_per_data_t *pd) {
 		assert(!arg->repeat);	/* Implementation guarantee */
 	}
 	next_chunk_bits = next_chunk_bytes << 3;
-	avail = oldpd->nbits - oldpd->nboff;
+	avail = (ssize_t)(oldpd->nbits - oldpd->nboff);
 	if(avail >= next_chunk_bits) {
-		pd->nbits = oldpd->nboff + next_chunk_bits;
+		pd->nbits = oldpd->nboff + (size_t)next_chunk_bits;
 		arg->unclaimed = 0;
 		ASN_DEBUG("!+Parent frame %ld bits, alloting %ld [%ld..%ld] (%ld)",
 			(long)next_chunk_bits, (long)oldpd->moved,
@@ -360,7 +360,7 @@ uper_ugot_refill(asn_per_data_t *pd) {
 			(long)(oldpd->nbits - oldpd->nboff));
 	} else {
 		pd->nbits = oldpd->nbits;
-		arg->unclaimed = next_chunk_bits - avail;
+		arg->unclaimed = (size_t)(next_chunk_bits - avail);
 		ASN_DEBUG("!-Parent frame %ld, require %ld, will claim %ld",
 			(long)avail, (long)next_chunk_bits,
 			(long)arg->unclaimed);
@@ -419,7 +419,7 @@ aper_open_type_get_simple(const asn_codec_ctx_t *ctx,
 		}
 		if(bufLen + chunk_bytes > bufSize) {
 			void *ptr;
-			bufSize = chunk_bytes + (bufSize << 2);
+			bufSize = (size_t)(chunk_bytes + (bufSize << 2));
 			ptr = REALLOC(buf, bufSize);
 			if(!ptr) {
 				FREEMEM(buf);
@@ -431,7 +431,7 @@ aper_open_type_get_simple(const asn_codec_ctx_t *ctx,
 			FREEMEM(buf);
 			ASN__DECODE_STARVED;
 		}
-		bufLen += chunk_bytes;
+		bufLen += (size_t)chunk_bytes;
 	} while(repeat);
 
 	ASN_DEBUG("Getting open type %s encoded in %ld bytes", td->name,
@@ -451,7 +451,7 @@ aper_open_type_get_simple(const asn_codec_ctx_t *ctx,
                 if (((padding > 0 && padding < 8) ||
 		/* X.691#10.1.3 */
 		(spd.nboff == 0 && spd.nbits == 8 && spd.buffer == buf)) &&
-                    per_get_few_bits(&spd, padding) == 0) {
+                    per_get_few_bits(&spd, (int)padding) == 0) {
 			/* Everything is cool */
 			FREEMEM(buf);
 			return rv;

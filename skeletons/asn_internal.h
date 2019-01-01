@@ -88,7 +88,7 @@ asn__format_to_callback(
 /*
  * Invoke the application-supplied callback and fail, if something is wrong.
  */
-#define ASN__E_cbc(buf, size) (cb((buf), (size), app_key) < 0)
+#define ASN__E_cbc(buf, size) (cb((buf), (size_t)(size), app_key) < 0)
 #define ASN__E_CALLBACK(size, foo) \
     do {                           \
         if(foo) goto cb_failed;    \

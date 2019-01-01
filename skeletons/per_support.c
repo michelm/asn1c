@@ -20,7 +20,7 @@ uper_get_length(asn_per_data_t *pd, int ebits, size_t lower_bound,
     /* #11.9.4.1 Encoding if constrained (according to effective bits) */
     if(ebits >= 0 && ebits <= 16) {
         value = per_get_few_bits(pd, ebits);
-        if(value >= 0) value += lower_bound;
+        if(value >= 0) value += (ssize_t)lower_bound;
         return value;
     }
 
@@ -103,7 +103,7 @@ uper_put_nsnnwn(asn_per_outp_t *po, int n) {
 
 	if(n <= 63) {
 		if(n < 0) return -1;
-		return per_put_few_bits(po, n, 7);
+		return per_put_few_bits(po, (uint32_t)n, 7);
 	}
 	if(n < 256)
 		bytes = 1;
@@ -113,10 +113,10 @@ uper_put_nsnnwn(asn_per_outp_t *po, int n) {
 		bytes = 3;
 	else
 		return -1;	/* This is not a "normally small" value */
-	if(per_put_few_bits(po, bytes, 8))
+	if(per_put_few_bits(po, (uint32_t)bytes, 8))
 		return -1;
 
-	return per_put_few_bits(po, n, 8 * bytes);
+	return per_put_few_bits(po, (uint32_t)n, 8 * bytes);
 }
 
 
@@ -128,7 +128,7 @@ int uper_get_constrained_whole_number(asn_per_data_t *pd, uintmax_t *out_value, 
 	if(nbits <= 31) {
 		half = per_get_few_bits(pd, nbits);
 		if(half < 0) return -1;
-		*out_value = half;
+		*out_value = (uintmax_t)half;
 		return 0;
 	}
 
@@ -151,12 +151,12 @@ int
 uper_put_constrained_whole_number_u(asn_per_outp_t *po, uintmax_t v,
                                     int nbits) {
     if(nbits <= 31) {
-        return per_put_few_bits(po, v, nbits);
+        return per_put_few_bits(po, (uint32_t)v, nbits);
     } else {
         /* Put higher portion first, followed by lower 31-bit */
         if(uper_put_constrained_whole_number_u(po, v >> 31, nbits - 31))
             return -1;
-        return per_put_few_bits(po, v, 31);
+        return per_put_few_bits(po, (uint32_t)v, 31);
     }
 }
 
@@ -219,7 +219,7 @@ static int
 per__long_range(intmax_t lb, intmax_t ub, uintmax_t *range_r) {
     uintmax_t bounds_range;
     if((ub < 0) == (lb < 0)) {
-        bounds_range = ub - lb;
+        bounds_range = (uintmax_t)(ub - lb);
     } else if(lb < 0) {
         assert(ub >= 0);
         bounds_range = 1 + ((uintmax_t)ub + (uintmax_t)-(lb + 1));
@@ -250,7 +250,7 @@ per_long_range_rebase(intmax_t v, intmax_t lb, intmax_t ub, uintmax_t *output) {
      * compute the ranges accurately to avoid C's undefined behavior.
      */
     if((v < 0) == (lb < 0)) {
-        *output = v-lb;
+        *output = (uintmax_t)(v-lb);
         return 0;
     } else if(v < 0) {
         uintmax_t rebased = 1 + (uintmax_t)-(v+1) + (uintmax_t)lb;
@@ -299,7 +299,7 @@ aper_get_align(asn_per_data_t *pd) {
 
 	if(pd->nboff & 0x7) {
 		ASN_DEBUG("Aligning %ld bits", 8 - ((unsigned long)pd->nboff & 0x7));
-		return per_get_few_bits(pd, 8 - (pd->nboff & 0x7));
+		return per_get_few_bits(pd, (int)(8 - (pd->nboff & 0x7)));
 	}
 	return 0;
 }
@@ -391,7 +391,7 @@ int aper_put_align(asn_per_outp_t *po) {
 
 	if(po->nboff & 0x7) {
 		ASN_DEBUG("Aligning %ld bits", 8 - ((unsigned long)po->nboff & 0x7));
-		if(per_put_few_bits(po, 0x00, (8 - (po->nboff & 0x7))))
+		if( per_put_few_bits(po, 0x00, (int)(8 - (po->nboff & 0x7))) )
 			return -1;
 	}
 	return 0;
@@ -404,7 +404,7 @@ aper_put_length(asn_per_outp_t *po, int range, size_t length) {
 
 	/* 10.9 X.691 Note 2 */
 	if (range <= 65536 && range >= 0)
-		return aper_put_nsnnwn(po, range, length);
+		return aper_put_nsnnwn(po, range, (int)length);
 
 	if (aper_put_align(po) < 0)
 		return -1;
@@ -465,7 +465,7 @@ aper_put_nsnnwn(asn_per_outp_t *po, int range, int number) {
 			if (range <= bits)
 				break;
 		}
-		return per_put_few_bits(po, number, i);
+		return per_put_few_bits(po, (uint32_t)number, i);
 	} else if(range == 256) {
 		bytes = 1;
 	} else if(range <= 65536) {
@@ -485,5 +485,5 @@ aper_put_nsnnwn(asn_per_outp_t *po, int range, int number) {
 /* 	if(per_put_few_bits(po, bytes, 8))
 		return -1;
 */
-    return per_put_few_bits(po, number, 8 * bytes);
+    return per_put_few_bits(po, (uint32_t)number, 8 * bytes);
 }
