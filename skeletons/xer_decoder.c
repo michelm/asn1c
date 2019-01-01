@@ -168,16 +168,16 @@ xer_check_tag(const void *buf_ptr, int size, const char *need_tag) {
 
 #undef	ADVANCE
 #define	ADVANCE(num_bytes)	do {				\
-		size_t num = (num_bytes);			\
+		size_t num = (size_t)(num_bytes);		\
 		buf_ptr = ((const char *)buf_ptr) + num;	\
 		size -= num;					\
-		consumed_myself += num;				\
+		consumed_myself += (ssize_t)num;		\
 	} while(0)
 
 #undef	RETURN
 #define	RETURN(_code)	do {					\
 		rval.code = _code;				\
-		rval.consumed = consumed_myself;		\
+		rval.consumed = (size_t)consumed_myself;	\
 		if(rval.code != RC_OK)				\
 			ASN_DEBUG("Failed with %d", rval.code);	\
 		return rval;					\
@@ -340,7 +340,7 @@ xer_whitespace_span(const void *chunk_buf, size_t chunk_size) {
 		}
 		break;
 	}
-	return (p - (const char *)chunk_buf);
+	return (size_t)(p - (const char *)chunk_buf);
 }
 
 /*

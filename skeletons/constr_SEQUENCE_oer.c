@@ -17,7 +17,7 @@
 #undef  ADVANCE
 #define ADVANCE(num_bytes)                   \
     do {                                     \
-        size_t num = num_bytes;              \
+        size_t num = (size_t)num_bytes;      \
         ptr = ((const char *)ptr) + num;     \
         size -= num;                         \
         consumed_myself += num;              \

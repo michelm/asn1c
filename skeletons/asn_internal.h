@@ -92,7 +92,7 @@ asn__format_to_callback(
 #define ASN__E_CALLBACK(size, foo) \
     do {                           \
         if(foo) goto cb_failed;    \
-        er.encoded += (size);      \
+        er.encoded += (ssize_t)(size);      \
     } while(0)
 #define ASN__CALLBACK(buf, size) ASN__E_CALLBACK(size, ASN__E_cbc(buf, size))
 #define ASN__CALLBACK2(buf1, size1, buf2, size2) \

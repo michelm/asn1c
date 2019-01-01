@@ -677,7 +677,7 @@ emit_value_determination_code(arg_t *arg, asn1p_expr_type_e etype, asn1cnst_rang
 
 			if(native_long_sign(arg, r_value) >= 0) {
 				/* Special case for treating unsigned longs */
-				OUT("if(asn_INTEGER2ulong(st, &value)) {\n");
+				OUT("if(asn_INTEGER2umax(st, &value)) {\n");
 				INDENT(+1);
 				OUT("ASN__CTFAIL(app_key, td, sptr,\n");
 				OUT("\t\"%%s: value too large (%%s:%%d)\",\n");
@@ -686,7 +686,7 @@ emit_value_determination_code(arg_t *arg, asn1p_expr_type_e etype, asn1cnst_rang
 				INDENT(-1);
 				OUT("}\n");
 			} else {
-				OUT("if(asn_INTEGER2long(st, &value)) {\n");
+				OUT("if(asn_INTEGER2imax(st, &value)) {\n");
 				INDENT(+1);
 				OUT("ASN__CTFAIL(app_key, td, sptr,\n");
 				OUT("\t\"%%s: value too large (%%s:%%d)\",\n");
