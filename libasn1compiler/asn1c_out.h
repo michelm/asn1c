@@ -147,16 +147,20 @@ int asn1c_compiled_output(arg_t *arg, const char *file, int lineno,
     do {                               \
         if(iv == (-2147483647L - 1))   \
             OUT("(-2147483647L - 1)"); \
-        else                           \
+        else {                         \
             OUT("%s", asn1p_itoa(iv)); \
+            OUT("LL");                 \
+        }                              \
     } while(0)
 
 #define OINTS(iv)                                              \
     do {                                                       \
         if(iv == (-2147483647L - 1))                           \
             OUT("(-2147483647L - 1)");                         \
-        else                                                   \
+        else {                                                 \
             OUT("%s%s", (iv >= 0) ? " " : "", asn1p_itoa(iv)); \
+            OUT("LL");                                         \
+        }                                                      \
     } while(0)
 
 #endif	/* ASN1_COMPILED_OUTPUT_H */

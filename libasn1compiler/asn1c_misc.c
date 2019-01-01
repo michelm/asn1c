@@ -54,8 +54,8 @@ asn1c_prefix()
  */
 const char *
 asn1c_make_identifier(enum ami_flags_e flags, asn1p_expr_t *expr, ...) {
-	static char *storage;
-	static int storage_size;
+	static char *storage = NULL;
+	static int storage_size = 0;
 	int nodelimiter = 0;
 	va_list ap;
 	char *str;

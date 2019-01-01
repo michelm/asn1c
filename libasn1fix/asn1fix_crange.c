@@ -585,7 +585,7 @@ _range_split(asn1cnst_range_t *ra, const asn1cnst_range_t *rb) {
 static int
 _range_intersection(asn1cnst_range_t *range, const asn1cnst_range_t *with, int strict_edge_check, int is_oer) {
 	int ret;
-	int i, j;
+	int i, j, recursive_cnt, recursive_max = 1000;
 
 	assert(!range->incompatible);
 
@@ -666,7 +666,13 @@ _range_intersection(asn1cnst_range_t *range, const asn1cnst_range_t *with, int s
 	 * Split range in pieces.
 	 */
 
-	for(i = 0; i < range->el_count; i++) {
+	for(i = 0, recursive_cnt = 0; i < range->el_count; i++, recursive_cnt++) {
+	  if (recursive_cnt >= recursive_max) {
+	    fprintf(stderr, "ERROR(%s:%i) maximum(%i) recursive limit reached\n", 
+	      __FILE__, __LINE__, recursive_cnt);
+	    exit(EXIT_FAILURE);
+	  }
+
 	  for(j = -1; j < with->el_count; j++) {
 		const asn1cnst_range_t *wel;
 		asn1cnst_range_t *r;
