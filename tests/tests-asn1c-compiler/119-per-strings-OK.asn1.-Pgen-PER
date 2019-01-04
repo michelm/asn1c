@@ -1064,61 +1064,61 @@ static int asn_PER_MAP_us_ir_31_c2v(unsigned int code) {
 /*** <<< CTDEFS [PDU] >>> ***/
 
 static asn_per_constraints_t asn_PER_memb_ia5_c_constr_5 CC_NOTUSED = {
-	{ APC_CONSTRAINED,	 5,  5,  65,  90 }	/* (65..90) */,
-	{ APC_SEMI_CONSTRAINED,	-1, -1,  0,  0 }	/* (SIZE(0..MAX)) */,
+	{ APC_CONSTRAINED,	 5,  5,  65LL,  90LL }	/* (65..90) */,
+	{ APC_SEMI_CONSTRAINED,	-1, -1,  0LL,  0LL }	/* (SIZE(0..MAX)) */,
 	0, 0	/* No PER character map necessary */
 };
 static asn_per_constraints_t asn_PER_memb_ia5_ce_constr_6 CC_NOTUSED = {
 	{ APC_UNCONSTRAINED,	-1, -1,  0,  0 },
-	{ APC_SEMI_CONSTRAINED,	-1, -1,  0,  0 }	/* (SIZE(0..MAX)) */,
+	{ APC_SEMI_CONSTRAINED,	-1, -1,  0LL,  0LL }	/* (SIZE(0..MAX)) */,
 	0, 0	/* No PER character map necessary */
 };
 static asn_per_constraints_t asn_PER_memb_ia5_ir_constr_7 CC_NOTUSED = {
-	{ APC_CONSTRAINED,	 3,  3,  65,  90 }	/* (65..90) */,
-	{ APC_SEMI_CONSTRAINED,	-1, -1,  0,  0 }	/* (SIZE(0..MAX)) */,
+	{ APC_CONSTRAINED,	 3,  3,  65LL,  90LL }	/* (65..90) */,
+	{ APC_SEMI_CONSTRAINED,	-1, -1,  0LL,  0LL }	/* (SIZE(0..MAX)) */,
 	asn_PER_MAP_ia5_ir_7_v2c,	/* Value to PER code map */
 	asn_PER_MAP_ia5_ir_7_c2v	/* PER code to value map */
 };
 static asn_per_constraints_t asn_PER_memb_vs_c_constr_9 CC_NOTUSED = {
-	{ APC_CONSTRAINED,	 5,  5,  65,  90 }	/* (65..90) */,
-	{ APC_SEMI_CONSTRAINED,	-1, -1,  0,  0 }	/* (SIZE(0..MAX)) */,
+	{ APC_CONSTRAINED,	 5,  5,  65LL,  90LL }	/* (65..90) */,
+	{ APC_SEMI_CONSTRAINED,	-1, -1,  0LL,  0LL }	/* (SIZE(0..MAX)) */,
 	0, 0	/* No PER character map necessary */
 };
 static asn_per_constraints_t asn_PER_memb_vs_ce_constr_10 CC_NOTUSED = {
 	{ APC_UNCONSTRAINED,	-1, -1,  0,  0 },
-	{ APC_SEMI_CONSTRAINED,	-1, -1,  0,  0 }	/* (SIZE(0..MAX)) */,
+	{ APC_SEMI_CONSTRAINED,	-1, -1,  0LL,  0LL }	/* (SIZE(0..MAX)) */,
 	0, 0	/* No PER character map necessary */
 };
 static asn_per_constraints_t asn_PER_memb_vs_ir_constr_11 CC_NOTUSED = {
-	{ APC_CONSTRAINED,	 3,  3,  65,  90 }	/* (65..90) */,
-	{ APC_SEMI_CONSTRAINED,	-1, -1,  0,  0 }	/* (SIZE(0..MAX)) */,
+	{ APC_CONSTRAINED,	 3,  3,  65LL,  90LL }	/* (65..90) */,
+	{ APC_SEMI_CONSTRAINED,	-1, -1,  0LL,  0LL }	/* (SIZE(0..MAX)) */,
 	asn_PER_MAP_vs_ir_11_v2c,	/* Value to PER code map */
 	asn_PER_MAP_vs_ir_11_c2v	/* PER code to value map */
 };
 static asn_per_constraints_t asn_PER_memb_pr_c_constr_13 CC_NOTUSED = {
-	{ APC_CONSTRAINED,	 5,  5,  65,  90 }	/* (65..90) */,
-	{ APC_SEMI_CONSTRAINED,	-1, -1,  0,  0 }	/* (SIZE(0..MAX)) */,
+	{ APC_CONSTRAINED,	 5,  5,  65LL,  90LL }	/* (65..90) */,
+	{ APC_SEMI_CONSTRAINED,	-1, -1,  0LL,  0LL }	/* (SIZE(0..MAX)) */,
 	0, 0	/* No PER character map necessary */
 };
 static asn_per_constraints_t asn_PER_memb_pr_ir_constr_14 CC_NOTUSED = {
-	{ APC_CONSTRAINED,	 3,  3,  65,  90 }	/* (65..90) */,
-	{ APC_SEMI_CONSTRAINED,	-1, -1,  0,  0 }	/* (SIZE(0..MAX)) */,
+	{ APC_CONSTRAINED,	 3,  3,  65LL,  90LL }	/* (65..90) */,
+	{ APC_SEMI_CONSTRAINED,	-1, -1,  0LL,  0LL }	/* (SIZE(0..MAX)) */,
 	asn_PER_MAP_pr_ir_14_v2c,	/* Value to PER code map */
 	asn_PER_MAP_pr_ir_14_c2v	/* PER code to value map */
 };
 static asn_per_constraints_t asn_PER_memb_ns_c_constr_16 CC_NOTUSED = {
-	{ APC_CONSTRAINED,	 3,  3,  53,  57 }	/* (53..57) */,
-	{ APC_SEMI_CONSTRAINED,	-1, -1,  0,  0 }	/* (SIZE(0..MAX)) */,
+	{ APC_CONSTRAINED,	 3,  3,  53LL,  57LL }	/* (53..57) */,
+	{ APC_SEMI_CONSTRAINED,	-1, -1,  0LL,  0LL }	/* (SIZE(0..MAX)) */,
 	0, 0	/* No PER character map necessary */
 };
 static asn_per_constraints_t asn_PER_memb_ns_ce_constr_17 CC_NOTUSED = {
 	{ APC_UNCONSTRAINED,	-1, -1,  0,  0 },
-	{ APC_SEMI_CONSTRAINED,	-1, -1,  0,  0 }	/* (SIZE(0..MAX)) */,
+	{ APC_SEMI_CONSTRAINED,	-1, -1,  0LL,  0LL }	/* (SIZE(0..MAX)) */,
 	0, 0	/* No PER character map necessary */
 };
 static asn_per_constraints_t asn_PER_memb_ns_ir_constr_18 CC_NOTUSED = {
-	{ APC_CONSTRAINED,	 1,  1,  49,  57 }	/* (49..57) */,
-	{ APC_SEMI_CONSTRAINED,	-1, -1,  0,  0 }	/* (SIZE(0..MAX)) */,
+	{ APC_CONSTRAINED,	 1,  1,  49LL,  57LL }	/* (49..57) */,
+	{ APC_SEMI_CONSTRAINED,	-1, -1,  0LL,  0LL }	/* (SIZE(0..MAX)) */,
 	asn_PER_MAP_ns_ir_18_v2c,	/* Value to PER code map */
 	asn_PER_MAP_ns_ir_18_c2v	/* PER code to value map */
 };
@@ -1138,45 +1138,45 @@ static asn_per_constraints_t asn_PER_memb_ut_ir_constr_21 CC_NOTUSED = {
 	0, 0	/* No PER value map */
 };
 static asn_per_constraints_t asn_PER_memb_bm_c_constr_23 CC_NOTUSED = {
-	{ APC_CONSTRAINED,	 5,  5,  65,  90 }	/* (65..90) */,
-	{ APC_SEMI_CONSTRAINED,	-1, -1,  0,  0 }	/* (SIZE(0..MAX)) */,
+	{ APC_CONSTRAINED,	 5,  5,  65LL,  90LL }	/* (65..90) */,
+	{ APC_SEMI_CONSTRAINED,	-1, -1,  0LL,  0LL }	/* (SIZE(0..MAX)) */,
 	0, 0	/* No PER character map necessary */
 };
 static asn_per_constraints_t asn_PER_memb_bm_cs_constr_24 CC_NOTUSED = {
-	{ APC_CONSTRAINED,	 16,  16,  0,  65533 }	/* (0..65533) */,
-	{ APC_CONSTRAINED,	 0,  0,  6,  6 }	/* (SIZE(6..6)) */,
+	{ APC_CONSTRAINED,	 16,  16,  0LL,  65533LL }	/* (0..65533) */,
+	{ APC_CONSTRAINED,	 0,  0,  6LL,  6LL }	/* (SIZE(6..6)) */,
 	0, 0	/* No PER character map necessary */
 };
 static asn_per_constraints_t asn_PER_memb_bm_ce_constr_25 CC_NOTUSED = {
-	{ APC_CONSTRAINED,	 16,  16,  0,  65535 }	/* (0..65535) */,
-	{ APC_SEMI_CONSTRAINED,	-1, -1,  0,  0 }	/* (SIZE(0..MAX)) */,
+	{ APC_CONSTRAINED,	 16,  16,  0LL,  65535LL }	/* (0..65535) */,
+	{ APC_SEMI_CONSTRAINED,	-1, -1,  0LL,  0LL }	/* (SIZE(0..MAX)) */,
 	0, 0	/* No PER character map necessary */
 };
 static asn_per_constraints_t asn_PER_memb_bm_ir_constr_26 CC_NOTUSED = {
-	{ APC_CONSTRAINED,	 3,  3,  65,  90 }	/* (65..90) */,
-	{ APC_SEMI_CONSTRAINED,	-1, -1,  0,  0 }	/* (SIZE(0..MAX)) */,
+	{ APC_CONSTRAINED,	 3,  3,  65LL,  90LL }	/* (65..90) */,
+	{ APC_SEMI_CONSTRAINED,	-1, -1,  0LL,  0LL }	/* (SIZE(0..MAX)) */,
 	asn_PER_MAP_bm_ir_26_v2c,	/* Value to PER code map */
 	asn_PER_MAP_bm_ir_26_c2v	/* PER code to value map */
 };
 static asn_per_constraints_t asn_PER_memb_us_c_constr_28 CC_NOTUSED = {
-	{ APC_CONSTRAINED,	 5,  5,  65,  90 }	/* (65..90) */,
-	{ APC_SEMI_CONSTRAINED,	-1, -1,  0,  0 }	/* (SIZE(0..MAX)) */,
+	{ APC_CONSTRAINED,	 5,  5,  65LL,  90LL }	/* (65..90) */,
+	{ APC_SEMI_CONSTRAINED,	-1, -1,  0LL,  0LL }	/* (SIZE(0..MAX)) */,
 	0, 0	/* No PER character map necessary */
 };
 static asn_per_constraints_t asn_PER_memb_us_cs_constr_29 CC_NOTUSED = {
-	{ APC_CONSTRAINED,	 32,  32,  0,  2147483647 }	/* (0..4294967295) */,
-	{ APC_CONSTRAINED,	 0,  0,  6,  6 }	/* (SIZE(6..6)) */,
+	{ APC_CONSTRAINED,	 32,  32,  0LL,  2147483647LL }	/* (0..4294967295) */,
+	{ APC_CONSTRAINED,	 0,  0,  6LL,  6LL }	/* (SIZE(6..6)) */,
 	0, 0	/* No PER character map necessary */
 };
 static asn_per_constraints_t asn_PER_memb_us_ce_constr_30 CC_NOTUSED = {
 	{ APC_CONSTRAINED,	32, 32, 0, 2147483647 } /* special case 1 */
 	,
-	{ APC_SEMI_CONSTRAINED,	-1, -1,  0,  0 }	/* (SIZE(0..MAX)) */,
+	{ APC_SEMI_CONSTRAINED,	-1, -1,  0LL,  0LL }	/* (SIZE(0..MAX)) */,
 	0, 0	/* No PER character map necessary */
 };
 static asn_per_constraints_t asn_PER_memb_us_ir_constr_31 CC_NOTUSED = {
-	{ APC_CONSTRAINED,	 3,  3,  65,  90 }	/* (65..90) */,
-	{ APC_SEMI_CONSTRAINED,	-1, -1,  0,  0 }	/* (SIZE(0..MAX)) */,
+	{ APC_CONSTRAINED,	 3,  3,  65LL,  90LL }	/* (65..90) */,
+	{ APC_SEMI_CONSTRAINED,	-1, -1,  0LL,  0LL }	/* (SIZE(0..MAX)) */,
 	asn_PER_MAP_us_ir_31_v2c,	/* Value to PER code map */
 	asn_PER_MAP_us_ir_31_c2v	/* PER code to value map */
 };
@@ -1613,7 +1613,7 @@ extern asn_TYPE_descriptor_t asn_DEF_EXTERNAL;
 /*** <<< CTDEFS [EXTERNAL] >>> ***/
 
 static asn_per_constraints_t asn_PER_type_encoding_constr_5 CC_NOTUSED = {
-	{ APC_CONSTRAINED,	 2,  2,  0,  2 }	/* (0..2) */,
+	{ APC_CONSTRAINED,	 2,  2,  0LL,  2LL }	/* (0..2) */,
 	{ APC_UNCONSTRAINED,	-1, -1,  0,  0 },
 	0, 0	/* No PER value map */
 };

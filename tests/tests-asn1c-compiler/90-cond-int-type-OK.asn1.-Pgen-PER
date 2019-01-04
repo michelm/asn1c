@@ -156,7 +156,7 @@ per_type_encoder_f CN_IntegerMinLow_encode_aper;
 int
 CN_IntegerMinLow_constraint(const asn_TYPE_descriptor_t *td, const void *sptr,
 			asn_app_constraint_failed_f *ctfailcb, void *app_key) {
-	long value;
+	intmax_t value;
 	
 	if(!sptr) {
 		ASN__CTFAIL(app_key, td, sptr,
@@ -241,7 +241,7 @@ int
 NO_IntegerMinHigh_constraint(const asn_TYPE_descriptor_t *td, const void *sptr,
 			asn_app_constraint_failed_f *ctfailcb, void *app_key) {
 	const INTEGER_t *st = (const INTEGER_t *)sptr;
-	long value;
+	intmax_t value;
 	
 	if(!sptr) {
 		ASN__CTFAIL(app_key, td, sptr,
@@ -250,7 +250,7 @@ NO_IntegerMinHigh_constraint(const asn_TYPE_descriptor_t *td, const void *sptr,
 		return -1;
 	}
 	
-	if(asn_INTEGER2long(st, &value)) {
+	if(asn_INTEGER2imax(st, &value)) {
 		ASN__CTFAIL(app_key, td, sptr,
 			"%s: value too large (%s:%d)",
 			td->name, __FILE__, __LINE__);
@@ -330,7 +330,7 @@ per_type_encoder_f NO_IntegerLowHigh_encode_aper;
 int
 NO_IntegerLowHigh_constraint(const asn_TYPE_descriptor_t *td, const void *sptr,
 			asn_app_constraint_failed_f *ctfailcb, void *app_key) {
-	unsigned long value;
+	uintmax_t value;
 	
 	if(!sptr) {
 		ASN__CTFAIL(app_key, td, sptr,
@@ -360,7 +360,7 @@ NO_IntegerLowHigh_constraint(const asn_TYPE_descriptor_t *td, const void *sptr,
 /*** <<< CTDEFS [NO-IntegerLowHigh] >>> ***/
 
 static asn_per_constraints_t asn_PER_type_NO_IntegerLowHigh_constr_1 CC_NOTUSED = {
-	{ APC_CONSTRAINED,	 32, -1,  1,  3000000000 }	/* (1..3000000000) */,
+	{ APC_CONSTRAINED,	 32, -1,  1LL,  3000000000LL }	/* (1..3000000000) */,
 	{ APC_UNCONSTRAINED,	-1, -1,  0,  0 },
 	0, 0	/* No PER value map */
 };
@@ -419,7 +419,7 @@ per_type_encoder_f CN_IntegerLowMax_encode_aper;
 int
 CN_IntegerLowMax_constraint(const asn_TYPE_descriptor_t *td, const void *sptr,
 			asn_app_constraint_failed_f *ctfailcb, void *app_key) {
-	unsigned long value;
+	uintmax_t value;
 	
 	if(!sptr) {
 		ASN__CTFAIL(app_key, td, sptr,
@@ -449,7 +449,7 @@ CN_IntegerLowMax_constraint(const asn_TYPE_descriptor_t *td, const void *sptr,
 /*** <<< CTDEFS [CN-IntegerLowMax] >>> ***/
 
 static asn_per_constraints_t asn_PER_type_CN_IntegerLowMax_constr_1 CC_NOTUSED = {
-	{ APC_SEMI_CONSTRAINED,	-1, -1,  1,  0 }	/* (1..MAX) */,
+	{ APC_SEMI_CONSTRAINED,	-1, -1,  1LL,  0LL }	/* (1..MAX) */,
 	{ APC_UNCONSTRAINED,	-1, -1,  0,  0 },
 	0, 0	/* No PER value map */
 };
@@ -509,7 +509,7 @@ int
 NO_IntegerHighMax_constraint(const asn_TYPE_descriptor_t *td, const void *sptr,
 			asn_app_constraint_failed_f *ctfailcb, void *app_key) {
 	const INTEGER_t *st = (const INTEGER_t *)sptr;
-	long value;
+	intmax_t value;
 	
 	if(!sptr) {
 		ASN__CTFAIL(app_key, td, sptr,
@@ -518,7 +518,7 @@ NO_IntegerHighMax_constraint(const asn_TYPE_descriptor_t *td, const void *sptr,
 		return -1;
 	}
 	
-	if(asn_INTEGER2long(st, &value)) {
+	if(asn_INTEGER2imax(st, &value)) {
 		ASN__CTFAIL(app_key, td, sptr,
 			"%s: value too large (%s:%d)",
 			td->name, __FILE__, __LINE__);
@@ -544,7 +544,7 @@ NO_IntegerHighMax_constraint(const asn_TYPE_descriptor_t *td, const void *sptr,
 /*** <<< CTDEFS [NO-IntegerHighMax] >>> ***/
 
 static asn_per_constraints_t asn_PER_type_NO_IntegerHighMax_constr_1 CC_NOTUSED = {
-	{ APC_SEMI_CONSTRAINED,	-1, -1,  3000000000,  0 }	/* (3000000000..MAX) */,
+	{ APC_SEMI_CONSTRAINED,	-1, -1,  3000000000LL,  0LL }	/* (3000000000..MAX) */,
 	{ APC_UNCONSTRAINED,	-1, -1,  0,  0 },
 	0, 0	/* No PER value map */
 };
@@ -599,7 +599,7 @@ int
 NO_IntegerLowestMax_constraint(const asn_TYPE_descriptor_t *td, const void *sptr,
 			asn_app_constraint_failed_f *ctfailcb, void *app_key) {
 	const INTEGER_t *st = (const INTEGER_t *)sptr;
-	long value;
+	intmax_t value;
 	
 	if(!sptr) {
 		ASN__CTFAIL(app_key, td, sptr,
@@ -608,7 +608,7 @@ NO_IntegerLowestMax_constraint(const asn_TYPE_descriptor_t *td, const void *sptr
 		return -1;
 	}
 	
-	if(asn_INTEGER2long(st, &value)) {
+	if(asn_INTEGER2imax(st, &value)) {
 		ASN__CTFAIL(app_key, td, sptr,
 			"%s: value too large (%s:%d)",
 			td->name, __FILE__, __LINE__);
@@ -634,7 +634,7 @@ NO_IntegerLowestMax_constraint(const asn_TYPE_descriptor_t *td, const void *sptr
 /*** <<< CTDEFS [NO-IntegerLowestMax] >>> ***/
 
 static asn_per_constraints_t asn_PER_type_NO_IntegerLowestMax_constr_1 CC_NOTUSED = {
-	{ APC_SEMI_CONSTRAINED,	-1, -1, -3000000000,  0 }	/* (-3000000000..MAX) */,
+	{ APC_SEMI_CONSTRAINED,	-1, -1, -3000000000LL,  0LL }	/* (-3000000000..MAX) */,
 	{ APC_UNCONSTRAINED,	-1, -1,  0,  0 },
 	0, 0	/* No PER value map */
 };
@@ -688,7 +688,7 @@ per_type_encoder_f NO_IntegerOutRange_encode_aper;
 int
 NO_IntegerOutRange_constraint(const asn_TYPE_descriptor_t *td, const void *sptr,
 			asn_app_constraint_failed_f *ctfailcb, void *app_key) {
-	unsigned long value;
+	uintmax_t value;
 	
 	if(!sptr) {
 		ASN__CTFAIL(app_key, td, sptr,
@@ -718,7 +718,7 @@ NO_IntegerOutRange_constraint(const asn_TYPE_descriptor_t *td, const void *sptr,
 /*** <<< CTDEFS [NO-IntegerOutRange] >>> ***/
 
 static asn_per_constraints_t asn_PER_type_NO_IntegerOutRange_constr_1 CC_NOTUSED = {
-	{ APC_CONSTRAINED,	 1, -1,  3000000000,  3000000001 }	/* (3000000000..3000000001) */,
+	{ APC_CONSTRAINED,	 1, -1,  3000000000LL,  3000000001LL }	/* (3000000000..3000000001) */,
 	{ APC_UNCONSTRAINED,	-1, -1,  0,  0 },
 	0, 0	/* No PER value map */
 };
@@ -777,7 +777,7 @@ per_type_encoder_f NO_IntegerOutValue_encode_aper;
 int
 NO_IntegerOutValue_constraint(const asn_TYPE_descriptor_t *td, const void *sptr,
 			asn_app_constraint_failed_f *ctfailcb, void *app_key) {
-	unsigned long value;
+	uintmax_t value;
 	
 	if(!sptr) {
 		ASN__CTFAIL(app_key, td, sptr,
@@ -807,7 +807,7 @@ NO_IntegerOutValue_constraint(const asn_TYPE_descriptor_t *td, const void *sptr,
 /*** <<< CTDEFS [NO-IntegerOutValue] >>> ***/
 
 static asn_per_constraints_t asn_PER_type_NO_IntegerOutValue_constr_1 CC_NOTUSED = {
-	{ APC_CONSTRAINED,	 0, -1,  3000000000,  3000000000 }	/* (3000000000..3000000000) */,
+	{ APC_CONSTRAINED,	 0, -1,  3000000000LL,  3000000000LL }	/* (3000000000..3000000000) */,
 	{ APC_UNCONSTRAINED,	-1, -1,  0,  0 },
 	0, 0	/* No PER value map */
 };
@@ -866,7 +866,7 @@ per_type_encoder_f OK_IntegerInRange1_encode_aper;
 int
 OK_IntegerInRange1_constraint(const asn_TYPE_descriptor_t *td, const void *sptr,
 			asn_app_constraint_failed_f *ctfailcb, void *app_key) {
-	long value;
+	intmax_t value;
 	
 	if(!sptr) {
 		ASN__CTFAIL(app_key, td, sptr,
@@ -896,7 +896,7 @@ OK_IntegerInRange1_constraint(const asn_TYPE_descriptor_t *td, const void *sptr,
 /*** <<< CTDEFS [OK-IntegerInRange1] >>> ***/
 
 static asn_per_constraints_t asn_PER_type_OK_IntegerInRange1_constr_1 CC_NOTUSED = {
-	{ APC_CONSTRAINED,	 8,  8, -100,  100 }	/* (-100..100) */,
+	{ APC_CONSTRAINED,	 8,  8, -100LL,  100LL }	/* (-100..100) */,
 	{ APC_UNCONSTRAINED,	-1, -1,  0,  0 },
 	0, 0	/* No PER value map */
 };
@@ -950,7 +950,7 @@ per_type_encoder_f OK_IntegerInRange2_encode_aper;
 int
 OK_IntegerInRange2_constraint(const asn_TYPE_descriptor_t *td, const void *sptr,
 			asn_app_constraint_failed_f *ctfailcb, void *app_key) {
-	long value;
+	intmax_t value;
 	
 	if(!sptr) {
 		ASN__CTFAIL(app_key, td, sptr,
@@ -980,7 +980,7 @@ OK_IntegerInRange2_constraint(const asn_TYPE_descriptor_t *td, const void *sptr,
 /*** <<< CTDEFS [OK-IntegerInRange2] >>> ***/
 
 static asn_per_constraints_t asn_PER_type_OK_IntegerInRange2_constr_1 CC_NOTUSED = {
-	{ APC_CONSTRAINED,	 8,  8, -100,  100 }	/* (-100..100) */,
+	{ APC_CONSTRAINED,	 8,  8, -100LL,  100LL }	/* (-100..100) */,
 	{ APC_UNCONSTRAINED,	-1, -1,  0,  0 },
 	0, 0	/* No PER value map */
 };
@@ -1034,7 +1034,7 @@ per_type_encoder_f OK_IntegerInRange3_encode_aper;
 int
 OK_IntegerInRange3_constraint(const asn_TYPE_descriptor_t *td, const void *sptr,
 			asn_app_constraint_failed_f *ctfailcb, void *app_key) {
-	long value;
+	intmax_t value;
 	
 	if(!sptr) {
 		ASN__CTFAIL(app_key, td, sptr,
@@ -1064,7 +1064,7 @@ OK_IntegerInRange3_constraint(const asn_TYPE_descriptor_t *td, const void *sptr,
 /*** <<< CTDEFS [OK-IntegerInRange3] >>> ***/
 
 static asn_per_constraints_t asn_PER_type_OK_IntegerInRange3_constr_1 CC_NOTUSED = {
-	{ APC_CONSTRAINED,	 32, -1, (-2147483647L - 1),  2147483647 }	/* (-2147483648..2147483647) */,
+	{ APC_CONSTRAINED,	 32, -1, (-2147483647L - 1),  2147483647LL }	/* (-2147483648..2147483647) */,
 	{ APC_UNCONSTRAINED,	-1, -1,  0,  0 },
 	0, 0	/* No PER value map */
 };
@@ -1118,7 +1118,7 @@ per_type_encoder_f OK_IntegerInRange4_encode_aper;
 int
 OK_IntegerInRange4_constraint(const asn_TYPE_descriptor_t *td, const void *sptr,
 			asn_app_constraint_failed_f *ctfailcb, void *app_key) {
-	long value;
+	intmax_t value;
 	
 	if(!sptr) {
 		ASN__CTFAIL(app_key, td, sptr,
@@ -1148,7 +1148,7 @@ OK_IntegerInRange4_constraint(const asn_TYPE_descriptor_t *td, const void *sptr,
 /*** <<< CTDEFS [OK-IntegerInRange4] >>> ***/
 
 static asn_per_constraints_t asn_PER_type_OK_IntegerInRange4_constr_1 CC_NOTUSED = {
-	{ APC_CONSTRAINED,	 32, -1, (-2147483647L - 1),  2147483647 }	/* (-2147483648..2147483647) */,
+	{ APC_CONSTRAINED,	 32, -1, (-2147483647L - 1),  2147483647LL }	/* (-2147483648..2147483647) */,
 	{ APC_UNCONSTRAINED,	-1, -1,  0,  0 },
 	0, 0	/* No PER value map */
 };
@@ -1202,7 +1202,7 @@ per_type_encoder_f OK_IntegerInRange5_encode_aper;
 int
 OK_IntegerInRange5_constraint(const asn_TYPE_descriptor_t *td, const void *sptr,
 			asn_app_constraint_failed_f *ctfailcb, void *app_key) {
-	long value;
+	intmax_t value;
 	
 	if(!sptr) {
 		ASN__CTFAIL(app_key, td, sptr,
@@ -1232,7 +1232,7 @@ OK_IntegerInRange5_constraint(const asn_TYPE_descriptor_t *td, const void *sptr,
 /*** <<< CTDEFS [OK-IntegerInRange5] >>> ***/
 
 static asn_per_constraints_t asn_PER_type_OK_IntegerInRange5_constr_1 CC_NOTUSED = {
-	{ APC_CONSTRAINED | APC_EXTENSIBLE,  32, -1, (-2147483647L - 1),  2147483647 }	/* (-2147483648..2147483647,...) */,
+	{ APC_CONSTRAINED | APC_EXTENSIBLE,  32, -1, (-2147483647L - 1),  2147483647LL }	/* (-2147483648..2147483647,...) */,
 	{ APC_UNCONSTRAINED,	-1, -1,  0,  0 },
 	0, 0	/* No PER value map */
 };
@@ -1307,7 +1307,7 @@ NO_IntegerInRange6_constraint(const asn_TYPE_descriptor_t *td, const void *sptr,
 /*** <<< CTDEFS [NO-IntegerInRange6] >>> ***/
 
 static asn_per_constraints_t asn_PER_type_NO_IntegerInRange6_constr_1 CC_NOTUSED = {
-	{ APC_CONSTRAINED,	 32, -1,  0,  4294967295 }	/* (0..4294967295) */,
+	{ APC_CONSTRAINED,	 32, -1,  0LL,  4294967295LL }	/* (0..4294967295) */,
 	{ APC_UNCONSTRAINED,	-1, -1,  0,  0 },
 	0, 0	/* No PER value map */
 };
@@ -1503,7 +1503,7 @@ extern asn_TYPE_descriptor_t asn_DEF_EXTERNAL;
 /*** <<< CTDEFS [EXTERNAL] >>> ***/
 
 static asn_per_constraints_t asn_PER_type_encoding_constr_5 CC_NOTUSED = {
-	{ APC_CONSTRAINED,	 2,  2,  0,  2 }	/* (0..2) */,
+	{ APC_CONSTRAINED,	 2,  2,  0LL,  2LL }	/* (0..2) */,
 	{ APC_UNCONSTRAINED,	-1, -1,  0,  0 },
 	0, 0	/* No PER value map */
 };

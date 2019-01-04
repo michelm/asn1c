@@ -71,7 +71,7 @@ static int asn_DFL_2_set_5(void **sptr) {
 	}
 	
 	/* Install default value 5 */
-	*st = 5;
+	*st = 5LL;
 	return 0;
 }
 asn_TYPE_member_t asn_MBR_Flag_15P0_1[] = {
@@ -135,7 +135,7 @@ static int asn_DFL_7_set_5(void **sptr) {
 	}
 	
 	/* Install default value 5 */
-	*st = 5;
+	*st = 5LL;
 	return 0;
 }
 static const asn_INTEGER_enum_map_t asn_MAP_field_value2enum_7[] = {

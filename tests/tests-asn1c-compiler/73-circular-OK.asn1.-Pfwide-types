@@ -448,8 +448,8 @@ static int asn_DFL_3_cmp_7(const void *sptr) {
 	}
 	
 	/* Test default value 7 */
-	long value;
-	if(asn_INTEGER2long(st, &value))
+	intmax_t value;
+	if(asn_INTEGER2imax(st, &value))
 		return -1;
 	return (value != 7);
 }
@@ -462,7 +462,7 @@ static int asn_DFL_3_set_7(void **sptr) {
 	}
 	
 	/* Install default value 7 */
-	return asn_long2INTEGER(st, 7);
+	return asn_long2INTEGER(st, 7LL);
 }
 static asn_TYPE_member_t asn_MBR_senums_4[] = {
 	{ ATF_POINTER, 0, 0,

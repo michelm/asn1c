@@ -64,7 +64,7 @@ static const asn_ioc_set_t asn_IOS_FrameTypes_1[] = {
 static int
 memb_ident_constraint_1(const asn_TYPE_descriptor_t *td, const void *sptr,
 			asn_app_constraint_failed_f *ctfailcb, void *app_key) {
-	long value;
+	intmax_t value;
 	
 	if(!sptr) {
 		ASN__CTFAIL(app_key, td, sptr,
@@ -260,7 +260,7 @@ xer_type_encoder_f ConstrainedInteger_encode_xer;
 int
 ConstrainedInteger_constraint(const asn_TYPE_descriptor_t *td, const void *sptr,
 			asn_app_constraint_failed_f *ctfailcb, void *app_key) {
-	long value;
+	intmax_t value;
 	
 	if(!sptr) {
 		ASN__CTFAIL(app_key, td, sptr,

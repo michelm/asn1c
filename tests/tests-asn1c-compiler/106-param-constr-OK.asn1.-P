@@ -26,7 +26,7 @@ extern asn_TYPE_member_t asn_MBR_Narrow_15P0_1[3];
 static int
 memb_narrow1_constraint_1(const asn_TYPE_descriptor_t *td, const void *sptr,
 			asn_app_constraint_failed_f *ctfailcb, void *app_key) {
-	long value;
+	intmax_t value;
 	
 	if(!sptr) {
 		ASN__CTFAIL(app_key, td, sptr,
@@ -51,7 +51,7 @@ memb_narrow1_constraint_1(const asn_TYPE_descriptor_t *td, const void *sptr,
 static int
 memb_narrow2_constraint_1(const asn_TYPE_descriptor_t *td, const void *sptr,
 			asn_app_constraint_failed_f *ctfailcb, void *app_key) {
-	long value;
+	intmax_t value;
 	
 	if(!sptr) {
 		ASN__CTFAIL(app_key, td, sptr,
@@ -76,7 +76,7 @@ memb_narrow2_constraint_1(const asn_TYPE_descriptor_t *td, const void *sptr,
 static int
 memb_narrow3_constraint_1(const asn_TYPE_descriptor_t *td, const void *sptr,
 			asn_app_constraint_failed_f *ctfailcb, void *app_key) {
-	long value;
+	intmax_t value;
 	
 	if(!sptr) {
 		ASN__CTFAIL(app_key, td, sptr,
@@ -120,7 +120,7 @@ static int asn_DFL_2_set_3(void **sptr) {
 	}
 	
 	/* Install default value 3 */
-	*st = 3;
+	*st = 3LL;
 	return 0;
 }
 asn_TYPE_member_t asn_MBR_Narrow_15P0_1[] = {

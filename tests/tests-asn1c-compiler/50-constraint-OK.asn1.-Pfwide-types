@@ -72,7 +72,7 @@ int
 Int2_constraint(const asn_TYPE_descriptor_t *td, const void *sptr,
 			asn_app_constraint_failed_f *ctfailcb, void *app_key) {
 	const Int1_t *st = (const Int1_t *)sptr;
-	long value;
+	intmax_t value;
 	
 	if(!sptr) {
 		ASN__CTFAIL(app_key, td, sptr,
@@ -146,7 +146,7 @@ int
 Int3_constraint(const asn_TYPE_descriptor_t *td, const void *sptr,
 			asn_app_constraint_failed_f *ctfailcb, void *app_key) {
 	const Int2_t *st = (const Int2_t *)sptr;
-	long value;
+	intmax_t value;
 	
 	if(!sptr) {
 		ASN__CTFAIL(app_key, td, sptr,
@@ -155,7 +155,7 @@ Int3_constraint(const asn_TYPE_descriptor_t *td, const void *sptr,
 		return -1;
 	}
 	
-	if(asn_INTEGER2long(st, &value)) {
+	if(asn_INTEGER2imax(st, &value)) {
 		ASN__CTFAIL(app_key, td, sptr,
 			"%s: value too large (%s:%d)",
 			td->name, __FILE__, __LINE__);
@@ -224,7 +224,7 @@ int
 Int4_constraint(const asn_TYPE_descriptor_t *td, const void *sptr,
 			asn_app_constraint_failed_f *ctfailcb, void *app_key) {
 	const Int3_t *st = (const Int3_t *)sptr;
-	long value;
+	intmax_t value;
 	
 	if(!sptr) {
 		ASN__CTFAIL(app_key, td, sptr,
@@ -233,7 +233,7 @@ Int4_constraint(const asn_TYPE_descriptor_t *td, const void *sptr,
 		return -1;
 	}
 	
-	if(asn_INTEGER2long(st, &value)) {
+	if(asn_INTEGER2imax(st, &value)) {
 		ASN__CTFAIL(app_key, td, sptr,
 			"%s: value too large (%s:%d)",
 			td->name, __FILE__, __LINE__);
@@ -302,7 +302,7 @@ int
 Int5_constraint(const asn_TYPE_descriptor_t *td, const void *sptr,
 			asn_app_constraint_failed_f *ctfailcb, void *app_key) {
 	const Int4_t *st = (const Int4_t *)sptr;
-	long value;
+	intmax_t value;
 	
 	if(!sptr) {
 		ASN__CTFAIL(app_key, td, sptr,
@@ -311,7 +311,7 @@ Int5_constraint(const asn_TYPE_descriptor_t *td, const void *sptr,
 		return -1;
 	}
 	
-	if(asn_INTEGER2long(st, &value)) {
+	if(asn_INTEGER2imax(st, &value)) {
 		ASN__CTFAIL(app_key, td, sptr,
 			"%s: value too large (%s:%d)",
 			td->name, __FILE__, __LINE__);
@@ -380,7 +380,7 @@ int
 ExtensibleExtensions_constraint(const asn_TYPE_descriptor_t *td, const void *sptr,
 			asn_app_constraint_failed_f *ctfailcb, void *app_key) {
 	const INTEGER_t *st = (const INTEGER_t *)sptr;
-	long value;
+	intmax_t value;
 	
 	if(!sptr) {
 		ASN__CTFAIL(app_key, td, sptr,
@@ -389,7 +389,7 @@ ExtensibleExtensions_constraint(const asn_TYPE_descriptor_t *td, const void *spt
 		return -1;
 	}
 	
-	if(asn_INTEGER2long(st, &value)) {
+	if(asn_INTEGER2imax(st, &value)) {
 		ASN__CTFAIL(app_key, td, sptr,
 			"%s: value too large (%s:%d)",
 			td->name, __FILE__, __LINE__);
@@ -1935,7 +1935,7 @@ static int
 memb_int1_c_constraint_1(const asn_TYPE_descriptor_t *td, const void *sptr,
 			asn_app_constraint_failed_f *ctfailcb, void *app_key) {
 	const Int1_t *st = (const Int1_t *)sptr;
-	long value;
+	intmax_t value;
 	
 	if(!sptr) {
 		ASN__CTFAIL(app_key, td, sptr,
@@ -1944,7 +1944,7 @@ memb_int1_c_constraint_1(const asn_TYPE_descriptor_t *td, const void *sptr,
 		return -1;
 	}
 	
-	if(asn_INTEGER2long(st, &value)) {
+	if(asn_INTEGER2imax(st, &value)) {
 		ASN__CTFAIL(app_key, td, sptr,
 			"%s: value too large (%s:%d)",
 			td->name, __FILE__, __LINE__);
@@ -1966,7 +1966,7 @@ static int
 memb_int4_c_constraint_1(const asn_TYPE_descriptor_t *td, const void *sptr,
 			asn_app_constraint_failed_f *ctfailcb, void *app_key) {
 	const Int4_t *st = (const Int4_t *)sptr;
-	long value;
+	intmax_t value;
 	
 	if(!sptr) {
 		ASN__CTFAIL(app_key, td, sptr,
@@ -1975,7 +1975,7 @@ memb_int4_c_constraint_1(const asn_TYPE_descriptor_t *td, const void *sptr,
 		return -1;
 	}
 	
-	if(asn_INTEGER2long(st, &value)) {
+	if(asn_INTEGER2imax(st, &value)) {
 		ASN__CTFAIL(app_key, td, sptr,
 			"%s: value too large (%s:%d)",
 			td->name, __FILE__, __LINE__);
@@ -1997,7 +1997,7 @@ static int
 memb_int5_c_constraint_1(const asn_TYPE_descriptor_t *td, const void *sptr,
 			asn_app_constraint_failed_f *ctfailcb, void *app_key) {
 	const Int5_t *st = (const Int5_t *)sptr;
-	long value;
+	intmax_t value;
 	
 	if(!sptr) {
 		ASN__CTFAIL(app_key, td, sptr,
@@ -2006,7 +2006,7 @@ memb_int5_c_constraint_1(const asn_TYPE_descriptor_t *td, const void *sptr,
 		return -1;
 	}
 	
-	if(asn_INTEGER2long(st, &value)) {
+	if(asn_INTEGER2imax(st, &value)) {
 		ASN__CTFAIL(app_key, td, sptr,
 			"%s: value too large (%s:%d)",
 			td->name, __FILE__, __LINE__);
@@ -2035,8 +2035,8 @@ static int asn_DFL_2_cmp_3(const void *sptr) {
 	}
 	
 	/* Test default value 3 */
-	long value;
-	if(asn_INTEGER2long(st, &value))
+	intmax_t value;
+	if(asn_INTEGER2imax(st, &value))
 		return -1;
 	return (value != 3);
 }
@@ -2049,7 +2049,7 @@ static int asn_DFL_2_set_3(void **sptr) {
 	}
 	
 	/* Install default value 3 */
-	return asn_long2INTEGER(st, 3);
+	return asn_long2INTEGER(st, 3LL);
 }
 static int asn_DFL_5_cmp_1(const void *sptr) {
 	const BOOLEAN_t *st = sptr;
@@ -2070,7 +2070,7 @@ static int asn_DFL_5_set_1(void **sptr) {
 	}
 	
 	/* Install default value 1 */
-	*st = 1;
+	*st = 1LL;
 	return 0;
 }
 static const asn_INTEGER_enum_map_t asn_MAP_enum_c_value2enum_6[] = {
@@ -2383,7 +2383,7 @@ xer_type_encoder_f Enum1_encode_xer;
 int
 Enum1_constraint(const asn_TYPE_descriptor_t *td, const void *sptr,
 			asn_app_constraint_failed_f *ctfailcb, void *app_key) {
-	long value;
+	intmax_t value;
 	
 	if(!sptr) {
 		ASN__CTFAIL(app_key, td, sptr,

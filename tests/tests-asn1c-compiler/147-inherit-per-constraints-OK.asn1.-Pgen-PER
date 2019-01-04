@@ -28,7 +28,7 @@ per_type_encoder_f Short_encode_aper;
 int
 Short_constraint(const asn_TYPE_descriptor_t *td, const void *sptr,
 			asn_app_constraint_failed_f *ctfailcb, void *app_key) {
-	long value;
+	intmax_t value;
 	
 	if(!sptr) {
 		ASN__CTFAIL(app_key, td, sptr,
@@ -58,7 +58,7 @@ Short_constraint(const asn_TYPE_descriptor_t *td, const void *sptr,
 /*** <<< CTDEFS [Short] >>> ***/
 
 asn_per_constraints_t asn_PER_type_Short_constr_1 CC_NOTUSED = {
-	{ APC_CONSTRAINED,	 16,  16,  0,  65535 }	/* (0..65535) */,
+	{ APC_CONSTRAINED,	 16,  16,  0LL,  65535LL }	/* (0..65535) */,
 	{ APC_UNCONSTRAINED,	-1, -1,  0,  0 },
 	0, 0	/* No PER value map */
 };
@@ -113,7 +113,7 @@ per_type_encoder_f Alias_encode_aper;
 int
 Alias_constraint(const asn_TYPE_descriptor_t *td, const void *sptr,
 			asn_app_constraint_failed_f *ctfailcb, void *app_key) {
-	long value;
+	intmax_t value;
 	
 	if(!sptr) {
 		ASN__CTFAIL(app_key, td, sptr,
@@ -143,7 +143,7 @@ Alias_constraint(const asn_TYPE_descriptor_t *td, const void *sptr,
 /*** <<< CTDEFS [Alias] >>> ***/
 
 asn_per_constraints_t asn_PER_type_Alias_constr_1 CC_NOTUSED = {
-	{ APC_CONSTRAINED,	 16,  16,  0,  65535 }	/* (0..65535) */,
+	{ APC_CONSTRAINED,	 16,  16,  0LL,  65535LL }	/* (0..65535) */,
 	{ APC_UNCONSTRAINED,	-1, -1,  0,  0 },
 	0, 0	/* No PER value map */
 };
@@ -196,7 +196,7 @@ extern asn_TYPE_descriptor_t asn_DEF_Soo;
 static int
 memb_foo_constraint_1(const asn_TYPE_descriptor_t *td, const void *sptr,
 			asn_app_constraint_failed_f *ctfailcb, void *app_key) {
-	long value;
+	intmax_t value;
 	
 	if(!sptr) {
 		ASN__CTFAIL(app_key, td, sptr,
@@ -222,7 +222,7 @@ memb_foo_constraint_1(const asn_TYPE_descriptor_t *td, const void *sptr,
 /*** <<< CTDEFS [Soo] >>> ***/
 
 static asn_per_constraints_t asn_PER_memb_foo_constr_2 CC_NOTUSED = {
-	{ APC_CONSTRAINED,	 16,  16,  0,  65535 }	/* (0..65535) */,
+	{ APC_CONSTRAINED,	 16,  16,  0LL,  65535LL }	/* (0..65535) */,
 	{ APC_UNCONSTRAINED,	-1, -1,  0,  0 },
 	0, 0	/* No PER value map */
 };
@@ -340,7 +340,7 @@ extern asn_TYPE_descriptor_t asn_DEF_EXTERNAL;
 /*** <<< CTDEFS [EXTERNAL] >>> ***/
 
 static asn_per_constraints_t asn_PER_type_encoding_constr_5 CC_NOTUSED = {
-	{ APC_CONSTRAINED,	 2,  2,  0,  2 }	/* (0..2) */,
+	{ APC_CONSTRAINED,	 2,  2,  0LL,  2LL }	/* (0..2) */,
 	{ APC_UNCONSTRAINED,	-1, -1,  0,  0 },
 	0, 0	/* No PER value map */
 };

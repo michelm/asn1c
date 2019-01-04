@@ -26,7 +26,7 @@ static int
 memb_unsigned33_constraint_1(const asn_TYPE_descriptor_t *td, const void *sptr,
 			asn_app_constraint_failed_f *ctfailcb, void *app_key) {
 	const INTEGER_t *st = (const INTEGER_t *)sptr;
-	long value;
+	intmax_t value;
 	
 	if(!sptr) {
 		ASN__CTFAIL(app_key, td, sptr,
@@ -35,7 +35,7 @@ memb_unsigned33_constraint_1(const asn_TYPE_descriptor_t *td, const void *sptr,
 		return -1;
 	}
 	
-	if(asn_INTEGER2long(st, &value)) {
+	if(asn_INTEGER2imax(st, &value)) {
 		ASN__CTFAIL(app_key, td, sptr,
 			"%s: value too large (%s:%d)",
 			td->name, __FILE__, __LINE__);
@@ -57,7 +57,7 @@ static int
 memb_unsigned42_constraint_1(const asn_TYPE_descriptor_t *td, const void *sptr,
 			asn_app_constraint_failed_f *ctfailcb, void *app_key) {
 	const INTEGER_t *st = (const INTEGER_t *)sptr;
-	long value;
+	intmax_t value;
 	
 	if(!sptr) {
 		ASN__CTFAIL(app_key, td, sptr,
@@ -66,7 +66,7 @@ memb_unsigned42_constraint_1(const asn_TYPE_descriptor_t *td, const void *sptr,
 		return -1;
 	}
 	
-	if(asn_INTEGER2long(st, &value)) {
+	if(asn_INTEGER2imax(st, &value)) {
 		ASN__CTFAIL(app_key, td, sptr,
 			"%s: value too large (%s:%d)",
 			td->name, __FILE__, __LINE__);
@@ -88,7 +88,7 @@ static int
 memb_signed33_constraint_1(const asn_TYPE_descriptor_t *td, const void *sptr,
 			asn_app_constraint_failed_f *ctfailcb, void *app_key) {
 	const INTEGER_t *st = (const INTEGER_t *)sptr;
-	long value;
+	intmax_t value;
 	
 	if(!sptr) {
 		ASN__CTFAIL(app_key, td, sptr,
@@ -97,7 +97,7 @@ memb_signed33_constraint_1(const asn_TYPE_descriptor_t *td, const void *sptr,
 		return -1;
 	}
 	
-	if(asn_INTEGER2long(st, &value)) {
+	if(asn_INTEGER2imax(st, &value)) {
 		ASN__CTFAIL(app_key, td, sptr,
 			"%s: value too large (%s:%d)",
 			td->name, __FILE__, __LINE__);
@@ -119,7 +119,7 @@ static int
 memb_signed33ext_constraint_1(const asn_TYPE_descriptor_t *td, const void *sptr,
 			asn_app_constraint_failed_f *ctfailcb, void *app_key) {
 	const INTEGER_t *st = (const INTEGER_t *)sptr;
-	long value;
+	intmax_t value;
 	
 	if(!sptr) {
 		ASN__CTFAIL(app_key, td, sptr,
@@ -128,7 +128,7 @@ memb_signed33ext_constraint_1(const asn_TYPE_descriptor_t *td, const void *sptr,
 		return -1;
 	}
 	
-	if(asn_INTEGER2long(st, &value)) {
+	if(asn_INTEGER2imax(st, &value)) {
 		ASN__CTFAIL(app_key, td, sptr,
 			"%s: value too large (%s:%d)",
 			td->name, __FILE__, __LINE__);
@@ -150,22 +150,22 @@ memb_signed33ext_constraint_1(const asn_TYPE_descriptor_t *td, const void *sptr,
 /*** <<< CTDEFS [T] >>> ***/
 
 static asn_per_constraints_t asn_PER_memb_unsigned33_constr_2 CC_NOTUSED = {
-	{ APC_CONSTRAINED,	 33, -1,  0,  5000000000 }	/* (0..5000000000) */,
+	{ APC_CONSTRAINED,	 33, -1,  0LL,  5000000000LL }	/* (0..5000000000) */,
 	{ APC_UNCONSTRAINED,	-1, -1,  0,  0 },
 	0, 0	/* No PER value map */
 };
 static asn_per_constraints_t asn_PER_memb_unsigned42_constr_3 CC_NOTUSED = {
-	{ APC_CONSTRAINED,	 42, -1,  0,  3153600000000 }	/* (0..3153600000000) */,
+	{ APC_CONSTRAINED,	 42, -1,  0LL,  3153600000000LL }	/* (0..3153600000000) */,
 	{ APC_UNCONSTRAINED,	-1, -1,  0,  0 },
 	0, 0	/* No PER value map */
 };
 static asn_per_constraints_t asn_PER_memb_signed33_constr_4 CC_NOTUSED = {
-	{ APC_CONSTRAINED,	 33, -1, -4000000000,  4000000000 }	/* (-4000000000..4000000000) */,
+	{ APC_CONSTRAINED,	 33, -1, -4000000000LL,  4000000000LL }	/* (-4000000000..4000000000) */,
 	{ APC_UNCONSTRAINED,	-1, -1,  0,  0 },
 	0, 0	/* No PER value map */
 };
 static asn_per_constraints_t asn_PER_memb_signed33ext_constr_5 CC_NOTUSED = {
-	{ APC_CONSTRAINED | APC_EXTENSIBLE,  33, -1, -4000000000,  4000000000 }	/* (-4000000000..4000000000,...) */,
+	{ APC_CONSTRAINED | APC_EXTENSIBLE,  33, -1, -4000000000LL,  4000000000LL }	/* (-4000000000..4000000000,...) */,
 	{ APC_UNCONSTRAINED,	-1, -1,  0,  0 },
 	0, 0	/* No PER value map */
 };
@@ -293,7 +293,7 @@ extern asn_TYPE_descriptor_t asn_DEF_EXTERNAL;
 /*** <<< CTDEFS [EXTERNAL] >>> ***/
 
 static asn_per_constraints_t asn_PER_type_encoding_constr_5 CC_NOTUSED = {
-	{ APC_CONSTRAINED,	 2,  2,  0,  2 }	/* (0..2) */,
+	{ APC_CONSTRAINED,	 2,  2,  0LL,  2LL }	/* (0..2) */,
 	{ APC_UNCONSTRAINED,	-1, -1,  0,  0 },
 	0, 0	/* No PER value map */
 };

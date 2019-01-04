@@ -24,7 +24,7 @@ int
 MinMax_16P0_constraint(const asn_TYPE_descriptor_t *td, const void *sptr,
 			asn_app_constraint_failed_f *ctfailcb, void *app_key) {
 	const INTEGER_t *st = (const INTEGER_t *)sptr;
-	long value;
+	intmax_t value;
 	
 	if(!sptr) {
 		ASN__CTFAIL(app_key, td, sptr,
@@ -33,7 +33,7 @@ MinMax_16P0_constraint(const asn_TYPE_descriptor_t *td, const void *sptr,
 		return -1;
 	}
 	
-	if(asn_INTEGER2long(st, &value)) {
+	if(asn_INTEGER2imax(st, &value)) {
 		ASN__CTFAIL(app_key, td, sptr,
 			"%s: value too large (%s:%d)",
 			td->name, __FILE__, __LINE__);
@@ -102,7 +102,7 @@ int
 ThreePlus_constraint(const asn_TYPE_descriptor_t *td, const void *sptr,
 			asn_app_constraint_failed_f *ctfailcb, void *app_key) {
 	const MinMax_16P0_t *st = (const MinMax_16P0_t *)sptr;
-	long value;
+	intmax_t value;
 	
 	if(!sptr) {
 		ASN__CTFAIL(app_key, td, sptr,
@@ -111,7 +111,7 @@ ThreePlus_constraint(const asn_TYPE_descriptor_t *td, const void *sptr,
 		return -1;
 	}
 	
-	if(asn_INTEGER2long(st, &value)) {
+	if(asn_INTEGER2imax(st, &value)) {
 		ASN__CTFAIL(app_key, td, sptr,
 			"%s: value too large (%s:%d)",
 			td->name, __FILE__, __LINE__);

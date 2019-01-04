@@ -38,7 +38,7 @@ extern asn_TYPE_descriptor_t asn_DEF_T;
 static int
 memb_unsigned8_constraint_1(const asn_TYPE_descriptor_t *td, const void *sptr,
 			asn_app_constraint_failed_f *ctfailcb, void *app_key) {
-	long value;
+	intmax_t value;
 	
 	if(!sptr) {
 		ASN__CTFAIL(app_key, td, sptr,
@@ -63,7 +63,7 @@ memb_unsigned8_constraint_1(const asn_TYPE_descriptor_t *td, const void *sptr,
 static int
 memb_unsigned16_constraint_1(const asn_TYPE_descriptor_t *td, const void *sptr,
 			asn_app_constraint_failed_f *ctfailcb, void *app_key) {
-	long value;
+	intmax_t value;
 	
 	if(!sptr) {
 		ASN__CTFAIL(app_key, td, sptr,
@@ -88,7 +88,7 @@ memb_unsigned16_constraint_1(const asn_TYPE_descriptor_t *td, const void *sptr,
 static int
 memb_unsigned16stack_constraint_1(const asn_TYPE_descriptor_t *td, const void *sptr,
 			asn_app_constraint_failed_f *ctfailcb, void *app_key) {
-	long value;
+	intmax_t value;
 	
 	if(!sptr) {
 		ASN__CTFAIL(app_key, td, sptr,
@@ -113,7 +113,7 @@ memb_unsigned16stack_constraint_1(const asn_TYPE_descriptor_t *td, const void *s
 static int
 memb_unsigned16stack_ext_constraint_1(const asn_TYPE_descriptor_t *td, const void *sptr,
 			asn_app_constraint_failed_f *ctfailcb, void *app_key) {
-	long value;
+	intmax_t value;
 	
 	if(!sptr) {
 		ASN__CTFAIL(app_key, td, sptr,
@@ -139,7 +139,7 @@ static int
 memb_unsigned33_constraint_1(const asn_TYPE_descriptor_t *td, const void *sptr,
 			asn_app_constraint_failed_f *ctfailcb, void *app_key) {
 	const INTEGER_t *st = (const INTEGER_t *)sptr;
-	long value;
+	intmax_t value;
 	
 	if(!sptr) {
 		ASN__CTFAIL(app_key, td, sptr,
@@ -148,7 +148,7 @@ memb_unsigned33_constraint_1(const asn_TYPE_descriptor_t *td, const void *sptr,
 		return -1;
 	}
 	
-	if(asn_INTEGER2long(st, &value)) {
+	if(asn_INTEGER2imax(st, &value)) {
 		ASN__CTFAIL(app_key, td, sptr,
 			"%s: value too large (%s:%d)",
 			td->name, __FILE__, __LINE__);
@@ -188,7 +188,7 @@ memb_minmax_constraint_1(const asn_TYPE_descriptor_t *td, const void *sptr,
 static int
 memb_signed8_constraint_1(const asn_TYPE_descriptor_t *td, const void *sptr,
 			asn_app_constraint_failed_f *ctfailcb, void *app_key) {
-	long value;
+	intmax_t value;
 	
 	if(!sptr) {
 		ASN__CTFAIL(app_key, td, sptr,
@@ -213,7 +213,7 @@ memb_signed8_constraint_1(const asn_TYPE_descriptor_t *td, const void *sptr,
 static int
 memb_signed16_constraint_1(const asn_TYPE_descriptor_t *td, const void *sptr,
 			asn_app_constraint_failed_f *ctfailcb, void *app_key) {
-	long value;
+	intmax_t value;
 	
 	if(!sptr) {
 		ASN__CTFAIL(app_key, td, sptr,
@@ -238,7 +238,7 @@ memb_signed16_constraint_1(const asn_TYPE_descriptor_t *td, const void *sptr,
 static int
 memb_signed16stack_constraint_1(const asn_TYPE_descriptor_t *td, const void *sptr,
 			asn_app_constraint_failed_f *ctfailcb, void *app_key) {
-	long value;
+	intmax_t value;
 	
 	if(!sptr) {
 		ASN__CTFAIL(app_key, td, sptr,
@@ -263,7 +263,7 @@ memb_signed16stack_constraint_1(const asn_TYPE_descriptor_t *td, const void *spt
 static int
 memb_signed16stack_ext_constraint_1(const asn_TYPE_descriptor_t *td, const void *sptr,
 			asn_app_constraint_failed_f *ctfailcb, void *app_key) {
-	long value;
+	intmax_t value;
 	
 	if(!sptr) {
 		ASN__CTFAIL(app_key, td, sptr,
@@ -288,7 +288,7 @@ memb_signed16stack_ext_constraint_1(const asn_TYPE_descriptor_t *td, const void 
 static int
 memb_signed32_constraint_1(const asn_TYPE_descriptor_t *td, const void *sptr,
 			asn_app_constraint_failed_f *ctfailcb, void *app_key) {
-	long value;
+	intmax_t value;
 	
 	if(!sptr) {
 		ASN__CTFAIL(app_key, td, sptr,
@@ -314,7 +314,7 @@ static int
 memb_signed33ext_constraint_1(const asn_TYPE_descriptor_t *td, const void *sptr,
 			asn_app_constraint_failed_f *ctfailcb, void *app_key) {
 	const INTEGER_t *st = (const INTEGER_t *)sptr;
-	long value;
+	intmax_t value;
 	
 	if(!sptr) {
 		ASN__CTFAIL(app_key, td, sptr,
@@ -323,7 +323,7 @@ memb_signed33ext_constraint_1(const asn_TYPE_descriptor_t *td, const void *sptr,
 		return -1;
 	}
 	
-	if(asn_INTEGER2long(st, &value)) {
+	if(asn_INTEGER2imax(st, &value)) {
 		ASN__CTFAIL(app_key, td, sptr,
 			"%s: value too large (%s:%d)",
 			td->name, __FILE__, __LINE__);
@@ -402,7 +402,7 @@ static int asn_DFL_9_set_3(void **sptr) {
 	}
 	
 	/* Install default value 3 */
-	*st = 3;
+	*st = 3LL;
 	return 0;
 }
 static asn_TYPE_member_t asn_MBR_T_1[] = {

@@ -29,7 +29,7 @@ per_type_encoder_f PacketId_encode_aper;
 int
 PacketId_constraint(const asn_TYPE_descriptor_t *td, const void *sptr,
 			asn_app_constraint_failed_f *ctfailcb, void *app_key) {
-	long value;
+	intmax_t value;
 	
 	if(!sptr) {
 		ASN__CTFAIL(app_key, td, sptr,
@@ -59,7 +59,7 @@ PacketId_constraint(const asn_TYPE_descriptor_t *td, const void *sptr,
 /*** <<< CTDEFS [PacketId] >>> ***/
 
 asn_per_constraints_t asn_PER_type_PacketId_constr_1 CC_NOTUSED = {
-	{ APC_CONSTRAINED,	 16,  16,  0,  65535 }	/* (0..65535) */,
+	{ APC_CONSTRAINED,	 16,  16,  0LL,  65535LL }	/* (0..65535) */,
 	{ APC_UNCONSTRAINED,	-1, -1,  0,  0 },
 	0, 0	/* No PER value map */
 };
@@ -128,7 +128,7 @@ per_type_encoder_f Color_encode_aper;
 /*** <<< CTDEFS [Color] >>> ***/
 
 asn_per_constraints_t asn_PER_type_Color_constr_1 CC_NOTUSED = {
-	{ APC_CONSTRAINED,	 2,  2,  0,  2 }	/* (0..2) */,
+	{ APC_CONSTRAINED,	 2,  2,  0LL,  2LL }	/* (0..2) */,
 	{ APC_UNCONSTRAINED,	-1, -1,  0,  0 },
 	0, 0	/* No PER value map */
 };
@@ -215,7 +215,7 @@ per_type_encoder_f Valid_encode_aper;
 /*** <<< CTDEFS [Valid] >>> ***/
 
 asn_per_constraints_t asn_PER_type_Valid_constr_1 CC_NOTUSED = {
-	{ APC_CONSTRAINED,	 1,  1,  0,  1 }	/* (0..1) */,
+	{ APC_CONSTRAINED,	 1,  1,  0LL,  1LL }	/* (0..1) */,
 	{ APC_UNCONSTRAINED,	-1, -1,  0,  0 },
 	0, 0	/* No PER value map */
 };
@@ -318,7 +318,7 @@ Packet_List_constraint(const asn_TYPE_descriptor_t *td, const void *sptr,
 
 static asn_per_constraints_t asn_PER_type_Packet_List_constr_1 CC_NOTUSED = {
 	{ APC_UNCONSTRAINED,	-1, -1,  0,  0 },
-	{ APC_CONSTRAINED,	 8,  8,  1,  256 }	/* (SIZE(1..256)) */,
+	{ APC_CONSTRAINED,	 8,  8,  1LL,  256LL }	/* (SIZE(1..256)) */,
 	0, 0	/* No PER value map */
 };
 
@@ -405,7 +405,7 @@ UpperLayer_List_41P0_constraint(const asn_TYPE_descriptor_t *td, const void *spt
 
 asn_per_constraints_t asn_PER_type_UpperLayer_List_41P0_constr_1 CC_NOTUSED = {
 	{ APC_UNCONSTRAINED,	-1, -1,  0,  0 },
-	{ APC_CONSTRAINED,	 8,  8,  1,  256 }	/* (SIZE(1..256)) */,
+	{ APC_CONSTRAINED,	 8,  8,  1LL,  256LL }	/* (SIZE(1..256)) */,
 	0, 0	/* No PER value map */
 };
 
@@ -464,7 +464,7 @@ extern asn_per_constraints_t asn_PER_type_LowerLayer_List_45P0_constr_1;
 
 asn_per_constraints_t asn_PER_type_LowerLayer_List_45P0_constr_1 CC_NOTUSED = {
 	{ APC_UNCONSTRAINED,	-1, -1,  0,  0 },
-	{ APC_CONSTRAINED,	 8,  8,  1,  256 }	/* (SIZE(1..256)) */,
+	{ APC_CONSTRAINED,	 8,  8,  1LL,  256LL }	/* (SIZE(1..256)) */,
 	0, 0	/* No PER value map */
 };
 
@@ -622,7 +622,7 @@ static const asn_ioc_set_t asn_IOS_ClassItem_1[] = {
 static int
 memb_id_constraint_1(const asn_TYPE_descriptor_t *td, const void *sptr,
 			asn_app_constraint_failed_f *ctfailcb, void *app_key) {
-	long value;
+	intmax_t value;
 	
 	if(!sptr) {
 		ASN__CTFAIL(app_key, td, sptr,
@@ -740,12 +740,12 @@ memb_value_constraint_1(const asn_TYPE_descriptor_t *td, const void *sptr,
 /*** <<< CTDEFS [Packet] >>> ***/
 
 static asn_per_constraints_t asn_PER_memb_id_constr_2 CC_NOTUSED = {
-	{ APC_CONSTRAINED,	 16,  16,  0,  65535 }	/* (0..65535) */,
+	{ APC_CONSTRAINED,	 16,  16,  0LL,  65535LL }	/* (0..65535) */,
 	{ APC_UNCONSTRAINED,	-1, -1,  0,  0 },
 	0, 0	/* No PER value map */
 };
 static asn_per_constraints_t asn_PER_memb_color_constr_3 CC_NOTUSED = {
-	{ APC_CONSTRAINED,	 2,  2,  0,  2 }	/* (0..2) */,
+	{ APC_CONSTRAINED,	 2,  2,  0LL,  2LL }	/* (0..2) */,
 	{ APC_UNCONSTRAINED,	-1, -1,  0,  0 },
 	0, 0	/* No PER value map */
 };
@@ -906,7 +906,7 @@ extern asn_TYPE_descriptor_t asn_DEF_EXTERNAL;
 /*** <<< CTDEFS [EXTERNAL] >>> ***/
 
 static asn_per_constraints_t asn_PER_type_encoding_constr_5 CC_NOTUSED = {
-	{ APC_CONSTRAINED,	 2,  2,  0,  2 }	/* (0..2) */,
+	{ APC_CONSTRAINED,	 2,  2,  0LL,  2LL }	/* (0..2) */,
 	{ APC_UNCONSTRAINED,	-1, -1,  0,  0 },
 	0, 0	/* No PER value map */
 };

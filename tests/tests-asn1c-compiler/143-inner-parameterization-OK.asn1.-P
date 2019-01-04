@@ -106,7 +106,7 @@ extern asn_TYPE_member_t asn_MBR_SpecializedContent_21P1_3[1];
 static int
 memb_id_constraint_1(const asn_TYPE_descriptor_t *td, const void *sptr,
 			asn_app_constraint_failed_f *ctfailcb, void *app_key) {
-	long value;
+	intmax_t value;
 	
 	if(!sptr) {
 		ASN__CTFAIL(app_key, td, sptr,
@@ -131,7 +131,7 @@ memb_id_constraint_1(const asn_TYPE_descriptor_t *td, const void *sptr,
 static int
 memb_id_constraint_3(const asn_TYPE_descriptor_t *td, const void *sptr,
 			asn_app_constraint_failed_f *ctfailcb, void *app_key) {
-	long value;
+	intmax_t value;
 	
 	if(!sptr) {
 		ASN__CTFAIL(app_key, td, sptr,
