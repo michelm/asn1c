@@ -790,7 +790,7 @@ INTEGER_encode_uper(const asn_TYPE_descriptor_t *td,
 
 	/* X.691-11/2008, #13.2.2, test if constrained whole number */
 	if(ct && ct->range_bits >= 0) {
-        uintmax_t v, lb = (uintmax_t)ct->lower_bound, ub = (uintmax_t)ct->upper_bound;
+		uintmax_t v, lb = (uintmax_t)ct->lower_bound, ub = (uintmax_t)ct->upper_bound;
 
 		/* #11.5.6 -> #11.3 */
 		ASN_DEBUG("Encoding integer %jd (%ju) with range %d bits", value, value - lb, ct->range_bits);
